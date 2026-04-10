@@ -1,0 +1,70 @@
+{
+  "name": "touch-touch-fish",
+  "displayName": "TouchTouchFish 摸鱼小助手",
+  "description": "一个定时提醒开发者离开屏幕、喝水、走动的健康辅助插件",
+  "version": "1.0.0",
+  "publisher": "touch-touch-fish",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "health",
+    "reminder",
+    "break",
+    "timer",
+    "摸鱼"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "touchTouchFish.toggleTimer",
+        "title": "开启/暂停摸鱼计时器",
+        "icon": "$(watch)"
+      },
+      {
+        "command": "touchTouchFish.resetTimer",
+        "title": "重置摸鱼计时器"
+      },
+      {
+        "command": "touchTouchFish.showSettings",
+        "title": "打开摸鱼小助手设置"
+      }
+    ],
+    "configuration": {
+      "title": "TouchTouchFish 摸鱼小助手",
+      "properties": {
+        "touchTouchFish.workInterval": {
+          "type": "number",
+          "default": 45,
+          "minimum": 1,
+          "maximum": 180,
+          "description": "工作时长（分钟），默认45分钟"
+        },
+        "touchTouchFish.snoozeTime": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 30,
+          "description": "贪睡时长（分钟），默认5分钟"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "18.x",
+    "typescript": "^5.3.0"
+  }
+}

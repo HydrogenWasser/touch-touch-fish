@@ -1,6 +1,6 @@
 {
   "name": "touch-touch-fish",
-  "displayName": "TouchTouchFish 摸鱼小助手",
+  "displayName": "TouchTouchFish 提醒喝水小助手",
   "description": "一个定时提醒开发者离开屏幕、喝水、走动的健康辅助插件",
   "version": "1.0.0",
   "publisher": "touch-touch-fish",
@@ -25,20 +25,25 @@
     "commands": [
       {
         "command": "touchTouchFish.toggleTimer",
-        "title": "开启/暂停摸鱼计时器",
+        "title": "开启/暂停喝水计时器",
         "icon": "$(watch)"
       },
       {
         "command": "touchTouchFish.resetTimer",
-        "title": "重置摸鱼计时器"
+        "title": "重置喝水计时器"
       },
       {
         "command": "touchTouchFish.showSettings",
-        "title": "打开摸鱼小助手设置"
+        "title": "打开喝水小助手设置"
+      },
+      {
+        "command": "touchTouchFish.restoreVision",
+        "title": "🚨 立刻开始喝水！",
+        "icon": "$(eye-watch)"
       }
     ],
     "configuration": {
-      "title": "TouchTouchFish 摸鱼小助手",
+      "title": "TouchTouchFish 喝水小助手",
       "properties": {
         "touchTouchFish.workInterval": {
           "type": "number",
@@ -52,7 +57,7 @@
           "default": 5,
           "minimum": 1,
           "maximum": 30,
-          "description": "贪睡时长（分钟），默认5分钟"
+          "description": "喝水时长（分钟），默认5分钟"
         }
       }
     }
